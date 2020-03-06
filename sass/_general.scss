@@ -1,0 +1,82 @@
+html {
+    font-size: 100%;
+}
+
+body{
+	font: {
+		family: $font-main;
+		weight: $font-normal;
+	}
+    @include font-size(1);
+    line-height: $line-height;
+    color: $color-text;
+    background-color: $color-background;
+    overflow-x: hidden; /*for wow plugin*/
+    @include bp(min,425px) {
+        @include font-size(1);
+    }
+    @include bp(min,768px) {
+        @include font-size(1);
+    }
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Links */
+@include links ($color-links, $color-links-hover);
+
+a,
+a > * {
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:focus,
+a:hover {
+    outline: none;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Loader */
+// #loader-wrapper {
+//     @include overlay(fixed);
+//     background: #ddd;
+// }
+.loader {
+    background: #c6ac81;
+}
+
+.loader {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999991;
+}
+
+.loader-inner {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+}
+
+.wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+     @include bp(max,320px) {
+        margin-left: -15px;
+        margin-right: -15px;
+     }
+}

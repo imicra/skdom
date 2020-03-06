@@ -1,0 +1,161 @@
+/*Lists*/
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/*Tables*/
+.table {
+    display: table;
+    vertical-align: middle;
+    height: inherit;
+    width: 100%;
+    .td {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+/*Buttons*/
+.button {
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 28px;
+    border: 1px transparent solid;
+    @include transition;
+    @include bp(max,768px) {
+        &.full-sm {
+            display: block;
+        }  
+    }
+    & h4 {
+        font-size: inherit;
+        color: inherit;
+        margin-bottom: 0;
+        & i {
+            margin-left: 10px;
+        }
+    }
+    &.full {
+        display: block;
+    }
+    &.size-1 {
+        font-size: 1em;
+        padding: .6em 1em;
+        @include bp(min,768px) {
+            padding: .8em 1.2em;
+        }
+    }
+    &.size-2 {
+        font-size: 1.125em;
+        padding: 1em 1.2em;
+        @include bp(min,768px) {
+            padding: 1.25em 1.875em;
+        }
+    }
+
+    &.size-3 {
+        font-size: 1em;
+        padding: .6em 1.2em;
+    }
+
+    &.style-1 {
+        color: #fff;
+        background: $button-contrast;
+        z-index: 2;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            z-index: 1;
+            @include transition;
+            background: rgba(0,0,0,.05);
+        }
+        &:hover {
+            background: $button-contrast-hover;
+            &:after {
+                width: 100%;
+            }
+        }
+        
+    }
+    &.style-2 {
+        color: $color-bg;
+        background: transparent;
+        border-color: $color-bg;
+        &:hover {
+            color: $color-bg-inv;
+            background: $color-bg;
+        }
+    }
+    &.style-3 {
+        color: #fff;
+        background: $button-main-color;
+        &:hover {
+            background: $button-main-color-hover;
+        }  
+    }
+    &.right {
+        @include bp(min,768px) {
+            float: right;
+        }
+    }
+
+    &.style-4 {
+        color: #fff;
+        background: $button-contrast;
+        &:hover {
+            background: $button-contrast-hover;
+        }
+        
+    }
+}
+
+/*Swiper custom*/
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: $offwhite;
+    border: 2px solid $textdark;
+    opacity: .2;
+    @include transition;
+}
+
+.swiper-pagination-bullet-active {
+    background: $green;
+    border: none;
+    opacity: 1;
+}
+
+/*Funcybox custom*/
+.fancybox-opened .fancybox-skin {
+    box-shadow: none;
+}
+
+.fancybox-skin {
+    background: none;
+    border-radius: 0;
+}
+
+.fancybox-close {
+    right: 18px;
+    top: -24px;
+}
+
+/* SVG Icons base styles */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1em;
+}

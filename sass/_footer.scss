@@ -1,0 +1,234 @@
+.site-footer {
+	background-color: $footer-color;
+        font-size: .875em;
+	color: $color-text;
+        
+        & .rights-info {
+            text-align: left;
+            
+            & p {
+                display: inline-block;
+                
+                & span {
+                    color: $color-links;
+                    font-weight: 700;
+                }
+            }
+            
+            & .footer-logo {
+                margin-right: 20px;
+                opacity: .3;
+                max-height: 50px;
+            }
+        }
+        
+        & .site-info {
+            font-size: .9em;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 40px;
+            border-top: 1px solid $color-headlines;
+        }
+        
+        & .widget_nav_menu {
+    
+            & ul {
+                max-width: 425px;
+
+                @include bp(min,425px) {
+                    column-count: 2;
+                }
+            }
+
+            & ul li a {
+                color: $color-text;
+                padding: 5px 20px;
+                display: block;
+                @include transition;
+
+                &:hover {
+                    color: $color-links;
+                }
+            }
+
+            & ul li.active a {
+                color: $color-links;
+            }
+        }
+}
+
+.site-footer_wrap {
+    padding-top: 40px;
+    position: relative;
+    
+    & .overlay {
+        background-color: rgba(21,15,10,0.9);
+    }
+}
+
+// Menu centering
+.footer-menu_center {
+	text-align: left;
+
+	@include bp(min,768px) {
+		text-align: center;
+	}
+
+	& ul {
+
+		& li {
+			position: relative;
+
+			@include bp(min,768px) {
+				display: inline-block;
+
+				&:after {
+					content: '|';
+					position: absolute;
+					top: 0;
+					right: -7px;
+					color: $color-text;
+				}
+
+				&:last-child:after {
+					display: none;
+				}
+			}
+
+			& a {
+				color: $color-text;
+				padding: 5px 20px;
+				display: block;
+				@include transition;
+
+				&:hover {
+					color: #fff;
+				}
+
+				@include bp(min,768px) {
+					padding: 10px 20px;
+					display: inline;
+				}
+			}
+
+			&.active a {
+				color: #fff;
+			}
+		}
+	}
+}
+
+//Social Menu
+.social-menu {
+    margin: 1em 0;
+    
+    & ul {
+        text-align: center;
+        
+        & li {
+            display: inline-block;
+            
+            & a {
+                display: block;
+                color: #fff;
+                border-radius: 50%;
+                border: 1px solid;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                margin-right: 1em;
+                opacity: .6;
+                @include transition;
+                
+                &:hover {
+                    opacity: 1;
+                    color: $color-links-hover;
+                }
+                
+                @include bp(min,425px) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+    
+    .icon {
+        height: 1em;
+        width: 1em;
+        top: 8px;
+        
+        @include bp(min,425px) {
+            height: 2em;
+            width: 2em;
+            top: 10px;
+        }
+    }
+}
+
+.footer-widget {
+    padding-bottom: 20px;
+}
+
+.widget-title {
+    font-size: 1.25em;
+    color: $color-text;
+    font-style: italic;
+    text-transform: capitalize;
+    padding-left: 20px;
+    
+    &:after {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $color-line;
+        margin-top: 14px;
+    }
+}
+
+.widget_text {
+    
+    & p {
+        line-height: 1.8;
+    }
+    
+    & img.alignleft {
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
+
+.widget_media_gallery {
+    
+    & .gallery-columns-3 .gallery-item {
+        float: left;
+        width: 33.33333333%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    & .gallery-item {
+        background-color: #000;
+    }
+    
+    & a {
+        display: inline-block;
+        border: 4px solid $color-headlines;
+    }
+    
+    & img {
+        opacity: .4;
+        @include transition;
+        
+        &:hover {
+            opacity: .8;
+        }
+    }
+}
+
+.footer-rights {
+	text-align: center;
+}

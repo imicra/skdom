@@ -1,0 +1,289 @@
+.workflow-wrap {
+	padding-top: 30px;
+	padding-bottom: 45px;
+	position: relative;
+}
+
+.workflow-item {
+	margin-bottom: 15px;
+}
+
+.workflow-pic {
+	text-align: center;
+
+    @include bp(min,768px) {
+        padding-top: 40px;
+    }
+
+	& .hexagon {
+		position: relative;
+        @include hexagon($width: 72px, $height: 42px, $color: #fff);
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+
+        & span {
+	    	position: absolute;
+	    	background: $green;
+	    	width: 42px;
+            height: 2px;
+            left: 0;
+
+            &:nth-child(1) {
+                top: 0;
+                @include rotate(30deg);
+                left: 33px;
+			    margin-top: -10px;
+            }
+            &:nth-child(2) {
+                top: 0;
+                @include rotate(-30deg);
+                left: -3px;
+			    margin-top: -10px;
+            }
+            &:nth-child(3) {
+                top: 50%;
+                @include rotate(90deg);
+                left: 51px;
+            }
+            &:nth-child(4) {
+                top: 100%;
+                @include rotate(330deg);
+                left: 33px;
+			    margin-top: 10px;
+			    z-index: 1;
+            }
+            &:nth-child(5) {
+                top: 100%;
+                @include rotate(-330deg);
+                left: -3px;
+			    margin-top: 10px;
+			    z-index: 1;
+            }
+            &:nth-child(6) {
+                top: 50%;
+                @include rotate(90deg);
+                left: -21px;
+            }
+	    }
+
+        & i {
+        	font-size: 24px;
+        	color: $textdark;
+        	position: absolute;
+		    left: 50%;
+		    margin-left: -16px;
+		    top: 50%;
+		    margin-top: -18px;
+        }
+    }
+}
+
+//Hexagon round
+.hexagon-round {
+	position: absolute;
+    width: 91px;
+    height: 77px;
+    left: 50%;
+    margin-left: -45.5px;
+    // top: -38.5px;
+
+    @include bp(min,768px) {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        top: 0;
+    }
+
+    & i {
+    	font-size: 24px;
+    	color: $textdark;
+    	position: absolute;
+	    left: 50%;
+	    margin-left: -16px;
+	    top: 50%;
+	    margin-top: -18px;
+	    z-index: 3;
+	    @include transition;
+
+	    .workflow-item:hover & {
+	    	color: $color-backgrounds;
+	    }
+    }
+}
+
+.hexagon-round-back {
+	//custom
+    width: 91px;
+    height: 77px;
+    border-radius: 7px;
+    //common
+    display: block;
+    -webkit-transform: rotate(-30deg) skewX(30deg);
+    -ms-transform: rotate(-30deg) skewX(30deg);
+    -o-transform: rotate(-30deg) skewX(30deg);
+    transform: rotate(-30deg) skewX(30deg);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    font-size: 0;
+    line-height: 1;
+}
+
+.hexagon-round-back-inner,
+.hexagon-round-back-inner-before {
+	display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    overflow: hidden;
+    -webkit-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+    -ms-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+    -o-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+    transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+}
+
+.hexagon-round-back-inner-before {
+	background-color: $green;
+}
+
+.hexagon-round-top {
+	//custom
+    width: 87px;
+    height: 73px;
+    border-radius: 6px;
+    left: 2px;
+    top: 2px;
+    //common
+    display: block;
+    -webkit-transform: rotate(-30deg) skewX(30deg);
+    -ms-transform: rotate(-30deg) skewX(30deg);
+    -o-transform: rotate(-30deg) skewX(30deg);
+    transform: rotate(-30deg) skewX(30deg);
+    overflow: hidden;
+    position: absolute;
+    // left: 0;
+    // top: 0;
+    z-index: 2;
+    font-size: 0;
+    line-height: 1;
+}
+
+.hexagon-round-top-inner,
+.hexagon-round-top-inner-before {
+	display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    overflow: hidden;
+    -webkit-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+    -ms-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+    -o-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+    transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+}
+
+.hexagon-round-top-inner-before {
+	background-color: #fff;
+	@include transition;
+}
+
+.workflow-item:hover .hexagon-round-top-inner-before {
+	background-color: $green;
+}
+
+.workflow-text {
+    font-size: .9em;
+	background-color: #e1e1e1;
+	padding-top: 60px;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 25px;
+	position: relative;
+    margin-top: 38.5px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include bp(min,425px) {
+        font-size: 1em;
+    }
+
+    @include bp(min,768px) {
+        margin-top: 0;
+        max-width: none;
+    }
+
+    h4 {
+        font-size: 1.2em;
+        text-align: center;
+
+        @include bp(min,425px) {
+          font-size: 1.5em;
+        }
+
+        @include bp(min,768px) {
+            text-align: left;
+        }
+    }
+
+
+	& p {
+		color: $color-headlines;
+	}
+
+	& .line {
+		width: 60px;
+		margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: 2px solid $color-headlines;
+
+        @include bp(min,425px) {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        @include bp(min,768px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+	}
+
+	& .triangle {
+
+        display: none;
+
+		.workflow-item.odd & {
+			@include css-triangle($color: #e1e1e1, $direction: right, $size: 20px, $position: absolute, $round: false);
+		    top: 60px;
+		    right: 0;
+		}
+
+		.workflow-item.even & {
+			@include css-triangle($color: #e1e1e1, $direction: left, $size: 20px, $position: absolute, $round: false);
+		    top: 60px;
+		    left: 0;
+		}
+
+        @include bp(min,768px) {
+            display: block;
+        }
+	}
+}
+
+.line-vertical {
+    display: none;
+	position: absolute;
+	height: 100%;
+	width: 2px;
+	background: $green;
+	top: 0;
+	left: 50%;
+	margin-left: -1px;
+
+    @include bp(min,768px) {
+        display: block;
+    }
+}

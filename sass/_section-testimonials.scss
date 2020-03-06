@@ -1,0 +1,146 @@
+.invert {
+	background: #000;
+	color: $color-backgrounds;
+	position: relative;
+
+	// & .overlay {
+	// 	background: rgba(21, 15, 10, .85);
+	// 	// opacity: .85;
+	// }
+
+	& h1, & h2, & h3, & h4, & h5, & h6 {
+		color: $color-backgrounds;
+	}
+
+	& .line-short {
+		border-color: $color-backgrounds;
+	}
+}
+
+//for WP
+#testimonials .overlay {
+	background-color: rgba(21, 15, 10, .85);
+}
+
+.testimonials {
+	text-align: center;
+
+	& .swiper-slide {
+		opacity: .3;
+		@include transition;
+	}
+
+	& .swiper-slide-active {
+		opacity: 1;
+	}
+}
+
+.testimonials-item {
+	font-size: .9em;
+	padding-top: 28px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 30px;
+
+	@include bp(min,425px) {
+		font-size: 1em;
+	}
+
+	@include bp(min,768px) {
+		padding-top: 48px;
+		margin-bottom: 50px;
+	}
+
+	& p {
+		padding-top: 40px;
+		padding-bottom: 20px;
+		margin-bottom: 0;
+
+		@include bp(min,768px) {
+			padding-bottom: 40px;
+		}
+	}
+
+	& .author {
+		font-size: .875em;
+		display: block;
+		padding-top: 5px;
+
+		@include bp(min,768px) {
+			padding-top: 10px;
+		}
+	}
+}
+
+.testimonials-pic {
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+	& img {
+		border-radius: 50%;
+	}
+
+	& .pic-ui {
+		text-align: center;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+	    font-size: 24px;
+		border-radius: 50%;
+		background: $brown;
+
+		// & i {
+		// 	position: absolute;
+		// 	top: 50%;
+		// 	left: 50%;
+		// 	margin-top: -8px;
+		// 	margin-left: -7px;
+		// }
+	}
+}
+
+.button-slide {
+    text-align: center;
+    margin-right: 5px;
+    margin-left: 5px;
+	display: inline-block;
+	background: transparent;
+	width: 30px;
+	height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    font-weight: 400;
+	border: 1px solid $color-backgrounds;
+	border-radius: 50%;
+	cursor: pointer;
+	// position: relative;
+	@include transition;
+
+	&:hover {
+		background-color: $color-links-hover;
+	}
+
+	@include bp(min,425px) {
+		margin-bottom: $section-add;
+	}
+
+	&:hover.swiper-button-disabled {
+		background-color: transparent;
+	}
+
+	&.button-prev:before {
+	    content: "\34";
+	    font-family: 'ElegantIcons';
+	}
+
+	&.button-next:before {
+	    content: "\35";
+	    font-family: 'ElegantIcons';
+	}
+}

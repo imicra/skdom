@@ -1,0 +1,81 @@
+//for WP
+#contacts .overlay {
+	background-color: rgba(21, 15, 10, .85);
+}
+
+.blocks-wrap {
+	padding-top: 30px;
+
+	@include bp(min,425px) {
+		padding-top: 60px;
+	}
+}
+
+.rect-block {
+	color: $color-headlines;
+	text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+
+	@include bp(min,768px) {
+	    max-width: none;
+	}
+
+	& .block-icon__inner {
+		background: $offwhite;
+		padding: 30px 20px;
+		@include transition;
+
+		@include bp(min,768px) {
+			padding: 80px 20px;
+		}
+
+		& .icon-wrap {
+
+			& i {
+				font-size: 3em;
+				color: $greendark;
+				@include transition;
+			}
+		}
+
+		& h4 {
+			font-size: 1.375em;
+			color: $color-headlines;
+			text-transform: uppercase;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			margin-bottom: 0;
+			@include transition;
+		}
+
+		&:hover {
+			color: $color-backgrounds;
+			background: $greendark;
+
+			& .icon-wrap i,
+			& h4,
+			& a {
+				color: $color-backgrounds;
+			}
+		}
+	}
+}
+
+.block-icon__text {
+
+	& p {
+		margin-bottom: 0;
+	}
+
+	& a {
+		color: $color-text;
+		@include transition;
+
+		&:hover {
+			color: $color-links-hover;
+		}
+	}
+}

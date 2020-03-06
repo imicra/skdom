@@ -1,0 +1,116 @@
+.section {
+    @include padding-section($top: 52px, $bottom: 25px);
+    & .section-heading {
+        text-align: center;
+        & h2 {
+            text-transform: uppercase;
+            @include bp(max,425px) {
+                font-size: 1.2em;
+            }
+        }
+        & h3 {
+            font-size: 1.4em;
+            font-weight: $font-normal;
+            @include bp(min,425px) {
+                font-size: 1.875em;
+            }
+        }
+        & p {
+            margin-bottom: 50px;
+            line-height: 1.6;
+            @include bp(max,425px) {
+                font-size: .875em;
+            }
+        }
+        &.left {
+            text-align: left;
+        }
+    }
+    & .line-short {
+        width: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 12px;
+        border-top: 2px solid $color-line;
+    }
+
+    @include bp(min,425px) {
+        @include padding-section;
+    }
+}
+
+.section-add {
+    padding-bottom: $section-add;
+}
+
+//Background image
+.section-bg {
+    background-color: $color-sections;
+}
+
+.block-bg {
+    @include overlay(absolute, $w: null, $h: null, $z: null);
+}
+
+.bg-image {
+    background: {
+        repeat: no-repeat;
+        size: cover;
+    }
+}
+
+.bg-center {
+    background-position: 50% 50%;
+}
+
+.parallax-bg {
+    background-attachment: fixed;
+}
+
+//with Icons
+.block-icon {
+    font-size: .875em;
+    margin-bottom: $section-add;
+    @include transition;
+    & h3 {
+        font-size: 1em;
+        padding-top: 10px;
+    }
+    & p {
+        padding-top: 4px;
+        line-height: 1.6;
+    }
+    & i {
+        font-size: 32px;
+        position: absolute;
+        top: 0;
+    }
+    @include bp(max,768px) {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include bp(max,425px) {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.icon-outer {
+    & h3 {
+        padding-left: 55px;
+    }
+    & p {
+        padding-left: 55px;
+    }
+}
+
+.icon-inner {
+    & h3 {
+        padding-left: 55px;
+    }
+    & p {
+        padding-top: 10px;
+    }
+}

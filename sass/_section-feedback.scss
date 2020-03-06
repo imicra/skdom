@@ -1,0 +1,134 @@
+.section-group {
+    font-size: .9em;
+	padding-bottom: $section-add;
+
+    @include bp(min,425px) {
+        font-size: 1em;
+    }
+
+	& h3 {
+		font-size: 1.4em;
+		font-weight: $font-normal;
+        text-align: center;
+		margin-bottom: 20px;
+
+        @include bp(min,425px) {
+            font-size: 1.875em;
+            margin-bottom: 50px;
+        }
+
+        @include bp(min,768px) {
+            text-align: left;
+        }
+	}
+}
+
+/* ACCORDION */
+.accordion-section {
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+	font-size: 1em;
+	color: $color-backgrounds;
+	margin-bottom: 10px;
+
+	& a {
+		color: $color-headlines;
+	    display: block;
+	    padding: 0.5em 1em;
+	}
+}
+
+.accordion-ui {
+    background: $gray-dark;
+    text-align: center;
+    // position: relative;
+    float: left;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    margin-right: 15px;
+    font-weight: 400;
+    // left: 0;
+    // top: 0;
+
+    &:before {
+	    content: "\4c";
+	    font-family: 'ElegantIcons';
+    }
+
+    &.active {
+    	background: $green-second;
+
+    	&:before {
+    		content: "\4b";
+		    font-family: 'ElegantIcons';
+    	}
+    }
+}
+
+.accordion-content {
+	display: none;
+	font-size: .875em;
+    line-height: 1.6;
+}
+
+/* FORM */
+.contact-form {
+
+    & .input-cont {
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    & label {
+        position: absolute;
+        top: 13px;
+        left: 13px;
+        font-size: .875em;
+        pointer-events: none;
+        opacity: 1;
+        @include transition;
+        z-index: 1;
+
+        &.fade {
+            opacity: 0;
+        }
+    }
+
+    & input, 
+    & textarea {
+        // position: relative;
+        width: 100%;
+        border: 1px solid $gray-dark;
+        padding: 10px;
+
+        &[type="submit"] {
+            color: $color-backgrounds;
+            font-weight: $font-bold;
+            text-transform: uppercase;
+            background: $gray-dark;
+            padding: 15px;
+            @include transition;
+
+            &:hover {
+                background: $green-second;
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    & i {
+        position: absolute;
+        top: 13px;
+        right: 13px;
+        font-size: 1.4em;
+    }
+}

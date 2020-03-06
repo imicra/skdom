@@ -1,0 +1,67 @@
+.section-icons {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include bp(min,768px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    & .section-heading {
+        & h2 {
+            font-weight: 400;
+            text-transform: none;
+        }
+        & p {
+            font-size: .875em;
+            line-height: 1.4;
+        }
+    }
+    & .i-hexagon {
+        position: absolute;
+        @include i-hexagon($width: 35px, $height: 20.21px, $color: $icon-color-1);
+    }
+    & .block-icon {
+        &:hover {
+            & .i-hexagon {
+                // @include i-hexagon ($width: 35px, $height: 20.21px, $color: $icon-color-1);
+                background: $color-line;
+                &:before {
+                    border-bottom-color: $color-line;
+                }
+                &:after {
+                    border-top-color: $color-line;
+                }
+            }
+        }
+    }
+}
+
+.section-image {
+    position: relative;
+    & img {
+        @include bp(min,768px) {
+            max-width: none;
+            position: absolute;
+            top: 0;
+        }
+    }
+}
+
+.bigimg-left {
+    & .section-image {
+        & img {
+            @include bp(min,768px) {
+                right: 0;
+            }
+        }
+    }
+}
+
+.bigimg-right {
+    & .section-image {
+        & img {
+            @include bp(min,768px) {
+                left: 0;
+            }
+        }
+    }
+}

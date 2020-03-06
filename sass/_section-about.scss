@@ -1,0 +1,13 @@
+#about .block-icon {
+    & .sk {
+        color: $icon-color-1;
+        top: 9px;
+        @include transition;
+    }
+    &:hover {
+        color: $color-headlines;
+        & .sk {
+            color: $icon-color-1-hov;
+        }
+    }
+}

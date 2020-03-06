@@ -1,0 +1,40 @@
+/*
+Theme Name: skdom
+
+Adding support for theme options (for Customizer)
+
+*/
+
+.site-title {
+    color: #fff;
+}
+
+/* Customizer */
+.skdom_only_customizer {
+	display: none !important;
+}
+
+/* Logo */
+.logo-nav-opt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: 0;
+    margin-top: -1.5em;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+@media screen and (min-width: 1024px) {
+    .logo-nav-opt {
+        left: 0;
+        margin-left: 2em;
+        margin-top: 1em;
+        height: auto;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}
